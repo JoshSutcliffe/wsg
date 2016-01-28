@@ -1,0 +1,17 @@
+<h1>Login</h1>
+
+<h3>Don't have an account?</h3>
+<h4>Sign up <a href="/create_account">here</a></h4>
+<% if @user %>
+  <p><%= @user.errors.full_messages %></p>
+<% end %>
+
+<form action="/session" method="post">
+  <label for="">Email Address</label>
+  <input type="text" name="email">
+
+  <label for="">Password</label>
+  <input type="password" name="password">
+  <button class="btn waves-effect">Submit</button>
+
+</form>

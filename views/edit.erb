@@ -1,0 +1,28 @@
+<h1>Edit <%= @edit.name %></h1>
+
+<% if @stadium %>
+  <p><%= @stadium.errors.full_messages %></p>
+<% end %>
+
+<form action="/stadium/<%= @edit.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="">City</label>
+  <input type="text" name="city" value="<%= @edit.city %>">
+
+  <label for="">Country</label>
+  <input type="text" name="country" value="<%= @edit.country %>">
+
+  <label for="">What Clubs Play Here</label>
+  <input type="text" name="clubs" value="<%= @edit.clubs %>">
+
+  <label for="">Capacity</label>
+  <input type="number" name="capacity" value="<%= @edit.capacity %>">
+
+  <label for="">Stadium Bio</label>
+  <input type="text" name="bio" value="<%= @edit.bio %>">
+  
+  <button class="btn">Submit</button>
+</form>
+
+

@@ -1,0 +1,26 @@
+CREATE DATABASE worldstadiums
+
+CREATE TABLE users (
+  id SERIAL4 PRIMARY KEY,
+  username VARCHAR(100) NOT NULL,
+  email VARCHAR(200) NOT NULL,
+  password_digest VARCHAR(400) NOT NULL
+);
+
+CREATE TABLE likes (
+  id SERIAL4 PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  stadium_id INTEGER NOT NULL
+);
+
+CREATE TABLE stadia (
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  city VARCHAR(100) NOT NULL,
+  country VARCHAR(100) NOT NULL,
+  clubs VARCHAR(200) NOT NULL,
+  pictures VARCHAR(400) NOT NULL,
+  capacity INTEGER,
+  bio VARCHAR(1000),
+  comments VARCHAR(400)
+);

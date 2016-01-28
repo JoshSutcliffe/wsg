@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>World Stadium Guide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link rel='stylesheet' href='/stylesheets/main.css'>  
+</head>
+<body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo right">WSG</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons left">Menu</i></a>
+        <!-- above is for dropdown menu -->
+        <ul id="nav-mobile" class="hide-on-med-and-down left"> 
+          <!-- above is for right aligned login/out -->
+        <% if logged_in? %>
+          <form action="/session" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button class="btn waves-effect">Logout</button>
+            <li>Logged in as: <%= current_user_name %></li>
+          </form>
+        <% else %>
+          <form action="/session/new" method="get">
+            <button class="btn waves-effect">Login</button>
+          </form>
+        <% end %>
+      </ul>
+      <ul class="side-nav left" id="mobile-demo">
+        <% if logged_in? %>
+          <form action="/session" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button class="btn">Logout</button>
+            <li>Logged in as: <%= current_user_name %></li>
+          </form>
+        <% else %>
+          <form action="/session/new" method="get">
+            <button class="btn">Login</button>
+          </form>
+        <% end %>
+      </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container"> 
+        <%= yield %>
+  </div>
+
+  <footer class="page-footer">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">World Stadiums Guide</h5>
+          <p class="grey-text text-lighten-4">WSG was created to show stadiums all over the world. The most important thing though is to include your tips for visitng (meaning add the best pubs in the bio!).</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+            <li><a class="grey-text text-lighten-3" href="/stadium/new">Add Stadium</a></li>
+            <li><a class="grey-text text-lighten-3" href="/session/new">Login</a></li>
+          </ul>
+        </div>
+    </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2016 SutcliffeSports
+        </div>
+      </div>
+  </footer>
+
+  <script src="/javascripts/jquery.js" type="text/javascript"></script>
+  <script src="/javascripts/materialize.js" type="text/javascript"></script>
+  <script src="/javascripts/application.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+</body>

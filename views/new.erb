@@ -1,0 +1,31 @@
+<h1>Add New Stadium</h1>
+
+<% if @stadium %>
+  <p><%= @stadium.errors.full_messages %></p>s
+<% end %>
+
+<form action="/stadium/new" enctype="multipart/form-data" method="post">
+  <label for="">Stadium Name</label>
+  <input type="text" name="name" placeholder="Required">
+
+  <label for="">City</label>
+  <input type="text" name="city" placeholder="Required">
+
+  <label for="">Country</label>
+  <input type="text" name="country" placeholder="Required">
+
+  <label for="">What Clubs Play Here</label>
+  <input type="text" name="clubs" placeholder="Required">
+  
+  <label for="">Capacity</label>
+  <input type="number" name="capacity">
+
+  <label for="">Stadium Bio</label>
+  <input type="text" name="bio" placeholder="Max 1000 Characters">
+
+  <label for="">Pictures</label>
+  <input type="file" name="pictures" placeholder="Required">
+  <div class="divider"></div>
+  <button class="btn waves-effect">Submit</button>
+</form>
+
