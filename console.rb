@@ -8,5 +8,3 @@ require 'pry'
 end
 
 # Use this page to test the database
-
-binding.pry
