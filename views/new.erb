@@ -1,7 +1,11 @@
 <h1>Add New Stadium</h1>
 
-<% if @stadium %>
-  <p><%= @stadium.errors.full_messages %></p>s
+<% if @@stadium %>
+  <% @@stadium.errors.full_messages.each do |error| %>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+  <% end %>
 <% end %>
 
 <form action="/stadium/new" enctype="multipart/form-data" method="post">

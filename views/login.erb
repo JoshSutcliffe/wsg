@@ -3,7 +3,11 @@
 <h3>Don't have an account?</h3>
 <h4>Sign up <a href="/create_account">here</a></h4>
 <% if @user %>
-  <p><%= @user.errors.full_messages %></p>
+  <% @user.errors.full_messages.each do |error| %>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+  <% end %>
 <% end %>
 
 <form action="/session" method="post">

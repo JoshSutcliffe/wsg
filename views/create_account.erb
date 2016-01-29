@@ -1,5 +1,13 @@
 <h1>Create An Account</h1>
 
+<% if @user %>
+  <% @user.errors.full_messages.each do |error| %>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+  <% end %>
+<% end %>
+
 <form action="/session/create_account" method="post">
 
   <label for="">Username</label>

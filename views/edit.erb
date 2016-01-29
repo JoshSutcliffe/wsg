@@ -1,7 +1,11 @@
 <h1>Edit <%= @edit.name %></h1>
 
-<% if @stadium %>
-  <p><%= @stadium.errors.full_messages %></p>
+<% if @@stadium %>
+  <% @@stadium.errors.full_messages.each do |error| %>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+  <% end %>
 <% end %>
 
 <form action="/stadium/<%= @edit.id %>" method="post">

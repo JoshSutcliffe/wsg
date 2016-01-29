@@ -1,8 +1,6 @@
 require 'pg'     
 require 'sinatra'
 require './db_config'
-# require 'carrierwave/orm/activerecord'
-# require 'carrierwave'
 
 %w{stadium user like}.each do |file|
   require "./models/#{file}"
@@ -11,7 +9,6 @@ end
 configure :development do |c|
   require 'pry'
   require 'sinatra/reloader'
-  c.also_reload './models/*'
 end
 
 enable :sessions
@@ -171,7 +168,7 @@ post '/session/create_account' do
     end
   else
     # Shows error message on login page
-    erb :login
+    erb :create_account
   end
 
 end
