@@ -185,6 +185,7 @@ post '/session' do
     redirect to '/'
   else
     # stay on the login form for now
+    @user = User.find_by(email: params[:email])
     erb :login
   end
 end
