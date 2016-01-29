@@ -1,7 +1,7 @@
 <h1>Edit <%= @edit.name %></h1>
 
-<% if @@stadium %>
-  <% @@stadium.errors.full_messages.each do |error| %>
+<% if @stadium %>
+  <% @stadium.errors.full_messages.each do |error| %>
     <ul>
       <li><%= error %></li>
     </ul>
